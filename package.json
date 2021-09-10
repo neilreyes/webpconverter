@@ -5,7 +5,9 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon index.js"
+        "server": "nodemon index.js",
+        "client": "npm --prefix ./public run start",
+        "dev": "concurrently \"npm run server\" \"npm run client\" "
     },
     "keywords": [
         "webp",
@@ -18,8 +20,10 @@
     "license": "ISC",
     "dependencies": {
         "axios": "^0.21.4",
+        "concurrently": "^6.2.1",
         "cors": "^2.8.5",
         "express": "^4.17.1",
+        "mongoose": "^6.0.5",
         "multer": "^1.4.3",
         "nodemon": "^2.0.12",
         "webp-converter": "^2.3.3"
